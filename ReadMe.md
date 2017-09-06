@@ -2,7 +2,7 @@
 Very simple react state management library that uses react setState to populate a global state accessible to other components
 ## Usage
 ### Provider
-``` javascript
+```javascript
 import { Provider } from 'compx';
 ...
 render() {
