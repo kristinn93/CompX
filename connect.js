@@ -55,13 +55,13 @@ function connect(options) {
       }
       render() {
         const params = {
+          ...this.state,
           internal: {
-            ...this.state,
             setState: (name, state) => this.sendStateChange(name, state),
             registerComponent: (name, state) => this.registerComponent(name, state),
           },
         };
-        return <ExtentedComponent {...this.props} globalState={params} />;
+        return <ExtentedComponent {...this.props} CompX={params} />;
       }
     };
   };
