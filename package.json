@@ -2,8 +2,11 @@
   "name": "compx",
   "version": "0.0.2",
   "description": "State manager for react",
-  "main": "index.js",
+  "main": "dist/compx.cjs.js",
+  "module": "dist/compx.esm.js",
+  "browser": "dist/compx.umd.js",
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +23,15 @@
   "bugs": {
     "url": "https://github.com/kristinn93/CompX/issues"
   },
-  "homepage": "https://github.com/kristinn93/CompX#readme"
+  "homepage": "https://github.com/kristinn93/CompX#readme",
+  "dependencies": {
+    "babel-core": "6.26.0",
+    "babel-plugin-external-helpers": "6.22.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "rollup": "^0.49.2",
+    "rollup-plugin-babel": "^3.0.2"
+  }
 }

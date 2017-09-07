@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-function connect(options) {
+function Connect(options) {
   return ComponentToWrap => {
     const ExtentedComponent = class Extends extends ComponentToWrap {
       static propTypes = {
@@ -66,4 +66,4 @@ function connect(options) {
     };
   };
 }
-export default connect;
+export default Connect;
