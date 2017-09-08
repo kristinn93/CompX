@@ -1,12 +1,5 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var React = require('react');
-var React__default = _interopDefault(React);
-var PropTypes = _interopDefault(require('prop-types'));
+import React, { Children, Component } from 'react';
+import PropTypes from 'prop-types';
 
 var babelHelpers = {};
 
@@ -359,11 +352,11 @@ function Connect(options) {
               }
             }
           });
-          return React__default.createElement(ExtentedComponent, _extends({}, this.props, { CompX: params }));
+          return React.createElement(ExtentedComponent, _extends({}, this.props, { CompX: params }));
         }
       }]);
       return ConnectedToGlobalState;
-    }(React.Component), _class2.contextTypes = {
+    }(Component), _class2.contextTypes = {
       globalState: PropTypes.object.isRequired,
       registerComponent: PropTypes.func.isRequired,
       updateComponentState: PropTypes.func.isRequired
@@ -453,11 +446,11 @@ var Provider = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      return React.Children.only(this.props.children);
+      return Children.only(this.props.children);
     }
   }]);
   return Provider;
-}(React.Component);
+}(Component);
 
 Provider.childContextTypes = {
   globalState: PropTypes.object.isRequired,
@@ -465,5 +458,4 @@ Provider.childContextTypes = {
   updateComponentState: PropTypes.func.isRequired
 };
 
-exports.Provider = Provider;
-exports.Connect = Connect;
+export { Provider, Connect };

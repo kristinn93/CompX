@@ -1,6 +1,6 @@
 {
   "name": "compx",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "State manager for react",
   "main": "dist/compx.cjs.js",
   "module": "dist/compx.esm.js",

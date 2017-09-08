@@ -1,11 +1,12 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('prop-types')) :
-	typeof define === 'function' && define.amd ? define(['exports', 'react', 'prop-types'], factory) :
-	(factory((global.CompX = {}),global.React,global.PropTypes));
-}(this, (function (exports,React,PropTypes) { 'use strict';
+'use strict';
 
-var React__default = 'default' in React ? React['default'] : React;
-PropTypes = PropTypes && PropTypes.hasOwnProperty('default') ? PropTypes['default'] : PropTypes;
+Object.defineProperty(exports, '__esModule', { value: true });
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var React = require('react');
+var React__default = _interopDefault(React);
+var PropTypes = _interopDefault(require('prop-types'));
 
 var babelHelpers = {};
 
@@ -288,7 +289,7 @@ function Connect(options) {
           var cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
 
           get(Extends.prototype.__proto__ || Object.getPrototypeOf(Extends.prototype), 'setState', this).call(this, state, cb);
-          this.props.globalState.internal.setState(this.getDisplayName(), state);
+          this.props.CompX.internal.setState(this.getDisplayName(), state);
         }
       }, {
         key: 'componentWillMount',
@@ -296,12 +297,12 @@ function Connect(options) {
           if (get(Extends.prototype.__proto__ || Object.getPrototypeOf(Extends.prototype), 'componentWillMount', this)) {
             get(Extends.prototype.__proto__ || Object.getPrototypeOf(Extends.prototype), 'componentWillMount', this).call(this);
           }
-          this.props.globalState.internal.registerComponent(this.getDisplayName(), this.state);
+          this.props.CompX.internal.registerComponent(this.getDisplayName(), this.state);
         }
       }]);
       return Extends;
     }(ComponentToWrap), _class.propTypes = {
-      globalState: PropTypes.shape({
+      CompX: PropTypes.shape({
         internal: PropTypes.shape({
           setState: PropTypes.func.isRequired
         }).isRequired
@@ -466,7 +467,3 @@ Provider.childContextTypes = {
 
 exports.Provider = Provider;
 exports.Connect = Connect;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
