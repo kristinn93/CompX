@@ -45,7 +45,7 @@ function Connect(options) {
       }
       registerComponent(name, state) {
         let subscription = null;
-        if (options.subscribeTo && options.subscribeTo.length) {
+        if (options && options.subscribeTo && options.subscribeTo.length) {
           subscription = {
             subscribeTo: options.subscribeTo,
             callback: stateObject => this.reciveStateChanges(stateObject),

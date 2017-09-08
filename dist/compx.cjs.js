@@ -334,7 +334,7 @@ function Connect(options) {
           var _this3 = this;
 
           var subscription = null;
-          if (options.subscribeTo && options.subscribeTo.length) {
+          if (options && options.subscribeTo && options.subscribeTo.length) {
             subscription = {
               subscribeTo: options.subscribeTo,
               callback: function callback(stateObject) {
@@ -416,7 +416,6 @@ var Provider = function (_Component) {
   }, {
     key: 'updateComponentState',
     value: function updateComponentState(name, state) {
-      console.log('update components state', name, state);
       var newState = this.state;
       newState[name] = state;
       this.setState(newState);

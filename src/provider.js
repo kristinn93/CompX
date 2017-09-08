@@ -31,7 +31,6 @@ export default class Provider extends Component {
   }
 
   updateComponentState(name, state) {
-    console.log('update components state', name, state);
     const newState = this.state;
     newState[name] = state;
     this.setState(newState);
