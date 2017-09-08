@@ -1,6 +1,6 @@
 {
   "name": "compx",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "State manager for react",
   "main": "dist/compx.cjs.js",
   "module": "dist/compx.esm.js",
@@ -24,7 +24,7 @@
     "url": "https://github.com/kristinn93/CompX/issues"
   },
   "homepage": "https://github.com/kristinn93/CompX#readme",
-  "dependencies": {
+  "devDependencies": {
     "babel-core": "6.26.0",
     "babel-plugin-external-helpers": "6.22.0",
     "babel-plugin-transform-class-properties": "6.24.1",
