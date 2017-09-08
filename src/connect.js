@@ -4,7 +4,7 @@ function Connect(options) {
   return ComponentToWrap => {
     const ExtentedComponent = class Extends extends ComponentToWrap {
       static propTypes = {
-        globalState: PropTypes.shape({
+        CompX: PropTypes.shape({
           internal: PropTypes.shape({
             setState: PropTypes.func.isRequired,
           }).isRequired,
@@ -17,13 +17,13 @@ function Connect(options) {
       }
       setState(state = {}, cb = () => {}) {
         super.setState(state, cb);
-        this.props.globalState.internal.setState(this.getDisplayName(), state);
+        this.props.CompX.internal.setState(this.getDisplayName(), state);
       }
       componentWillMount() {
         if (super.componentWillMount) {
           super.componentWillMount();
         }
-        this.props.globalState.internal.registerComponent(this.getDisplayName(), this.state);
+        this.props.CompX.internal.registerComponent(this.getDisplayName(), this.state);
       }
     };
 

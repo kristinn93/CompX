@@ -289,7 +289,7 @@ function Connect(options) {
           var cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
 
           get(Extends.prototype.__proto__ || Object.getPrototypeOf(Extends.prototype), 'setState', this).call(this, state, cb);
-          this.props.globalState.internal.setState(this.getDisplayName(), state);
+          this.props.CompX.internal.setState(this.getDisplayName(), state);
         }
       }, {
         key: 'componentWillMount',
@@ -297,12 +297,12 @@ function Connect(options) {
           if (get(Extends.prototype.__proto__ || Object.getPrototypeOf(Extends.prototype), 'componentWillMount', this)) {
             get(Extends.prototype.__proto__ || Object.getPrototypeOf(Extends.prototype), 'componentWillMount', this).call(this);
           }
-          this.props.globalState.internal.registerComponent(this.getDisplayName(), this.state);
+          this.props.CompX.internal.registerComponent(this.getDisplayName(), this.state);
         }
       }]);
       return Extends;
     }(ComponentToWrap), _class.propTypes = {
-      globalState: PropTypes.shape({
+      CompX: PropTypes.shape({
         internal: PropTypes.shape({
           setState: PropTypes.func.isRequired
         }).isRequired
