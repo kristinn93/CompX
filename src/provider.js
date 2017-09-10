@@ -14,6 +14,7 @@ export default class Provider extends Component {
       registerComponent: (name, state, subscription) =>
         this.registerComponent(name, state, subscription),
       updateComponentState: (name, state) => this.updateComponentState(name, state),
+      unRegisterComponent: id => this.unRegisterComponent(id),
     };
   }
 
@@ -28,6 +29,9 @@ export default class Provider extends Component {
       this.emitFullStateForSubscription(subscription);
     }
     this.emitPartialState(name, state);
+  }
+  unRegisterComponent(id) {
+    this.subscriptions.splice(this.subscriptions.findIndex(item => item.id === id), 1);
   }
 
   updateComponentState(name, state) {
@@ -70,4 +74,5 @@ Provider.childContextTypes = {
   globalState: PropTypes.object.isRequired,
   registerComponent: PropTypes.func.isRequired,
   updateComponentState: PropTypes.func.isRequired,
+  unRegisterComponent: PropTypes.func.isRequired,
 };
