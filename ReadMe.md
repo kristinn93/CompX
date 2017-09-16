@@ -1,4 +1,6 @@
 # CompX - Still in active development
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/kristinn93/CompX.svg)](https://greenkeeper.io/)
 Very simple react state management library that uses react setState to populate a global state accessible to other components
 ## Usage
 ### Provider
