@@ -29,7 +29,7 @@ function Connect(options = {}) {
         if (super.componentWillUnmount) {
           super.componentWillUnmount();
         }
-        this.props.CompX.internal.unRegisterComponent();
+        this.props.CompX.internal.unRegisterComponent(this.getDisplayName());
       }
     };
 
@@ -66,9 +66,8 @@ function Connect(options = {}) {
         this.context.registerComponent(name, state, subscription);
       }
 
-      unRegisterComponent() {
-        // which one recives component will unmount ? this or the extended one 🤔
-        this.context.unRegisterComponent(this.id);
+      unRegisterComponent(name) {
+        this.context.unRegisterComponent(this.id, name);
       }
       render() {
         const params = {
@@ -76,7 +75,7 @@ function Connect(options = {}) {
           internal: {
             setState: (name, state) => this.sendStateChange(name, state),
             registerComponent: (name, state) => this.registerComponent(name, state),
-            unRegisterComponent: () => this.unRegisterComponent(),
+            unRegisterComponent: name => this.unRegisterComponent(name),
           },
         };
         return <ExtentedComponent {...this.props} CompX={params} />;

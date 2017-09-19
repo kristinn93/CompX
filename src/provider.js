@@ -30,8 +30,11 @@ export default class Provider extends Component {
     }
     this.emitPartialState(name, state);
   }
-  unRegisterComponent(id) {
+  unRegisterComponent(id, name) {
     this.subscriptions.splice(this.subscriptions.findIndex(item => item.id === id), 1);
+    const newState = this.state;
+    delete newState[name];
+    this.setState(newState), this.emitPartialState(name);
   }
 
   updateComponentState(name, state) {
