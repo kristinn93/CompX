@@ -1,4 +1,8 @@
-# CompX - Still in active development
+# CompX - ~~Still in active development~~ / Incomplete
+Due to lack of interest and motivation, this library won't be developed any further
+
+
+
 Very simple react state management library that uses react setState to populate a global state accessible to other components
 ## Usage
 ### Provider
